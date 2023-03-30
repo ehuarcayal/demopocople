@@ -1,5 +1,5 @@
 export class Request {
-    user!: string 
+    personIdentificationIdentifier!: string 
     password!: string 
     email!: string
   }
