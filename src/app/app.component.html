@@ -3,9 +3,7 @@ OpenLegacy - SUNAT
 </h2>
 
 <p-tabView>
-  <p-tabPanel header="Consulta SUNAT" >
-
-    
+  <p-tabPanel header="Consulta SUNAT" >    
     <div>
       <label for="user">
         User:
@@ -34,8 +32,37 @@ OpenLegacy - SUNAT
     
     <br>
     <br>
-    <td>{{ response.messageResponse }}</td>
-    
+    <td>{{ response.messageResponse }}</td>    
   </p-tabPanel>
-  
+  <p-tabPanel header="Visor Documento" >    
+    <div id="outerContainer">
+      <div>
+        <label for="user">
+          DNI/RUC:
+        </label>
+        <br>
+        <input id="dniRuc" type="text" pInputText [(ngModel)]="srcInput" >
+        <br><br>
+        <p-button label="Vizualizar" (click)="visualizar()" [disabled]="buttonDisabled"></p-button>
+      </div>
+
+      <div class="pdf-container">
+        <pdf-viewer
+          [src]="src"
+          [rotation]="0"
+          [original-size]="false"
+          [show-all]="true"
+          [fit-to-page]="false"
+          [zoom]="1"
+          [zoom-scale]="'page-width'"
+          [stick-to-page]="false"
+          [render-text]="true"
+          [external-link-target]="'blank'"
+          [autoresize]="true"
+          [show-borders]="false"
+          style="width: 90%; height: 500px;"
+        ></pdf-viewer>
+      </div>
+    </div>
+  </p-tabPanel>
 </p-tabView>

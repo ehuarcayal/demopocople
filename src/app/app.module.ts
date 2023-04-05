@@ -10,6 +10,7 @@ import { PasswordModule } from 'primeng/password';
 
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
       imports: [BrowserModule, 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
           PasswordModule,
           FormsModule,
           HttpClientModule,
+          PdfViewerModule,
     ],
       declarations: [AppComponent],
       bootstrap: [AppComponent],

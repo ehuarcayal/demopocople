@@ -19,5 +19,8 @@ export class ApiService {
     console.log(body)
     return this.http.post(this.baseURL, body,{'headers':headers})
   }
- 
+  
+  download(fileUrl: string): Observable<any> {
+    return this.http.get(fileUrl, { responseType: 'arraybuffer' });    
+  }
 }

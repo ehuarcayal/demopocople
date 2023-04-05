@@ -15,6 +15,8 @@ export class AppComponent implements OnInit {
       request = new Requestout();
       response = new Response();
       buttonDisabled!: boolean;
+      src:any;
+      srcInput = '';
 
       constructor(private apiService:ApiService) {}
 
@@ -38,8 +40,15 @@ export class AppComponent implements OnInit {
                               this.response.messageResponse = error.message;
                        }
                   )
-            }
-              
-            
+            }                          
+      }
+
+      visualizar() {            
+           this.apiService.download(this.srcInput)
+           .subscribe((file: ArrayBuffer) => {
+                  this.src = new Uint8Array(file);
+            // or directly passing ArrayBuffer
+            // this.pdfSrc = file;
+          });
       }
 }
