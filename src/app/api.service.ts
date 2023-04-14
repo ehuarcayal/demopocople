@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 export class ApiService {
    
   //baseURL: string = "https://appservice-poc01.azurewebsites.net/api/tax-report/process";
-  baseURL: string = "https://wappeu2cismd42.azurewebsites.net/api/tax-report/process";  
- 
+  //baseURL: string = "https://wappeu2cismd42.azurewebsites.net/api/tax-report/process";  
+  baseURL: string = "https://apisuxdev.viabcp.com/bs-financial-statement-assessment-ople-v1/regulations-compliance/financial-statement-assessment/v1/tax-report/process";
   constructor(private http: HttpClient) {
   }
  
